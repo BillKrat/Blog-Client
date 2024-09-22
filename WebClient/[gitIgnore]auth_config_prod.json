@@ -1,0 +1,14 @@
+{
+  "cacheMode": "", 
+  "authorizationParams": {
+    "redirect_uri" : "<base url[:port] client app>",
+    "scope": "",
+    "audience": "<Identifier: APIs|Auth0 Management API|Settings|Identifier>"
+  },
+  "timeoutInSeconds": 0,
+  "detailedResponse" : true,
+  "domain": "<API Audience: APIs>",
+  "clientId": "<Client ID: Applications>",
+  "apiUri": "<base url[:port] api app>",
+  "errorPath": ""
+}
