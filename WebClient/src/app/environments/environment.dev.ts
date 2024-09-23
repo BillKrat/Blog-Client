@@ -3,7 +3,6 @@
 // The list of file replacements can be found in `angular.json`.
 import configdev from '../../../auth_config_dev.json';
 
-// Import content from auth_config_dev.json file
 const { 
     cacheMode, authorizationParams: { redirect_uri, scope, audience }, 
       timeoutInSeconds, detailedResponse, domain, clientId,  apiUri, errorPath } = configdev as 

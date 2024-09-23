@@ -1,14 +1,14 @@
 {
   "cacheMode": "", 
   "authorizationParams": {
-    "redirect_uri" : "https://localhost:4200",
+    "redirect_uri" : "<base url[:port] client app>",
     "scope": "",
-    "audience": "https://dev-a0hjb1v0jos2opg2.us.auth0.com/api/v2/"
+    "audience": "<Identifier: APIs|Auth0 Management API|Settings|Identifier>"
   },
   "timeoutInSeconds": 0,
   "detailedResponse" : true,
-  "domain": "dev-a0hjb1v0jos2opg2.us.auth0.com",
-  "clientId": "vccpAHztTEWWkYWqiJ19SE02jtJUGrdT",
-  "apiUri": "https://localhost:5175",
+  "domain": "<API Audience: APIs>",
+  "clientId": "<Client ID: Applications>",
+  "apiUri": "<base url[:port] api app>",
   "errorPath": ""
 }
