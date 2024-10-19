@@ -1,9 +1,10 @@
 
-import env from '../../auth_config_dev.json';
+import env from '../../public/auth_config_dev.json';
 
 // Import content from auth_config_dev.json file
 const { cacheMode, authorizationParams: { redirect_uri, scope, audience }, 
-        timeoutInSeconds, detailedResponse, domain, clientId,  apiUri, errorPath } = env as {
+        timeoutInSeconds, detailedResponse, domain, clientId,  apiUri, errorPath } 
+    = env as {
     cacheMode: string, authorizationParams: {redirect_uri?: string, scope?: string, audience?: string },
     timeoutInSeconds: number, detailedResponse: boolean, domain: string, clientId: string,
     apiUri: string, errorPath: string

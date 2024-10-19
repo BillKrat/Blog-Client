@@ -1,7 +1,7 @@
 // This file can be replaced during build by using the `fileReplacements` array.
 // `ng build --prod` replaces `environment.ts` with `environment.prod.ts`.
 // The list of file replacements can be found in `angular.json`.
-import configdev from '../../../auth_config_dev.json';
+import configdev from '../../../public/auth_config_dev.json';
 
 const { 
     cacheMode, authorizationParams: { redirect_uri, scope, audience }, 

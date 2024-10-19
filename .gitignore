@@ -1,2 +1,4 @@
 WebClient/auth_config_dev.json
 WebClient/auth_config_prod.json
+WebClient/public/auth_config_dev.json
+WebClient/public/auth_config_prod.json
