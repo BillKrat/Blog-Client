@@ -15,7 +15,24 @@
             "regexp": "(.*?)"
           },
           "endsPattern": {
-            "regexp": "bundle generation complete"
+            "regexp": "Watch mode enabled."
+          }
+        }
+      }
+    },    {
+      "type": "npm",
+      "script": "start-prod",
+      "isBackground": true,
+      "problemMatcher": {
+        "owner": "typescript",
+        "pattern": "$tsc",
+        "background": {
+          "activeOnStart": true,
+          "beginsPattern": {
+            "regexp": "(.*?)"
+          },
+          "endsPattern": {
+            "regexp": "Watch mode enabled."
           }
         }
       }
