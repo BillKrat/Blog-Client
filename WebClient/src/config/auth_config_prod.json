@@ -1,7 +1,7 @@
 {
   "cacheMode": "", 
   "authorizationParams": {
-    "redirect_uri" : "<base url[:port] client app>",
+    "redirect_uri" : "http://www.global-webnet.com",
     "scope": "",
     "audience": "<Identifier: APIs|Auth0 Management API|Settings|Identifier>"
   },
@@ -9,7 +9,6 @@
   "detailedResponse" : true,
   "domain": "<API Audience: APIs>",
   "clientId": "<Client ID: Applications>",
-  "apiUri": "<base url[:port] api app>",
+  "apiUri": "http://api.global-webnet.com",
   "errorPath": ""
 }
-

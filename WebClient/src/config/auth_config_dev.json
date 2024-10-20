@@ -1,7 +1,7 @@
 {
   "cacheMode": "", 
   "authorizationParams": {
-    "redirect_uri" : "<base url[:port] client app>",
+    "redirect_uri" : "https://localhost:4200",
     "scope": "",
     "audience": "<Identifier: APIs|Auth0 Management API|Settings|Identifier>"
   },
@@ -9,6 +9,6 @@
   "detailedResponse" : true,
   "domain": "<API Audience: APIs>",
   "clientId": "<Client ID: Applications>",
-  "apiUri": "<base url[:port] api app>",
+  "apiUri": "https://localhost:5157",
   "errorPath": ""
 }

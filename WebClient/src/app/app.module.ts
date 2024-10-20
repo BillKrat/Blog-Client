@@ -5,6 +5,7 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { ConfigService } from './services/config.service';
 import { provideHttpClient } from '@angular/common/http';
+import { SharedModule } from './shared/shared.module';
 
 export function initializeApp(configService: ConfigService) {
   return () =>  
@@ -21,6 +22,7 @@ export function initializeApp(configService: ConfigService) {
   imports: [
     BrowserModule,
     AppRoutingModule,
+    SharedModule
   ],
   providers: [
     provideHttpClient(),
