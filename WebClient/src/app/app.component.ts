@@ -8,14 +8,14 @@ import { ConfigService } from './services/config.service';
   styleUrl: './app.component.css'
 })
 export class AppComponent implements OnInit {
-  private readonly configService = inject(ConfigService);
   apiUrl = "";
   title = 'WebClient';
 
-  constructor(){
-    console.log("hello");
-  }
+  constructor(private services:ConfigService){ }
+
   ngOnInit(){
-    this.apiUrl = this.configService.getEnv().auth.apiUri;
+    this.services.config$.subscribe(config=>{
+      this.apiUrl = JSON.stringify(config);
+    });
   }
 }

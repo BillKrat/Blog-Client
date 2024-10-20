@@ -7,9 +7,11 @@ import { ConfigService } from './services/config.service';
 import { provideHttpClient } from '@angular/common/http';
 
 export function initializeApp(configService: ConfigService) {
-    return ()=>configService.loadConfig().subscribe((config)=>{
-      configService.setConfig(config);
-    });
+  return () =>  
+    {
+      console.log("initializeApp");
+      configService.loadConfig()
+    }
 }
 
 @NgModule({
