@@ -3,6 +3,9 @@ import { HttpClient } from '@angular/common/http';
 import { Subject } from 'rxjs';
 import { environment } from '../../environments/environment';
 import { flattenJsonData } from '../shared/utility/jsonUtils';
+import * as CryptoJS from 'crypto-js';
+import { ConfigConstants } from '../shared/constants/configConstants';
+
 
 @Injectable({
   providedIn: 'root'
@@ -12,6 +15,7 @@ export class ConfigService {
 
   constructor(
     private http: HttpClient,
+    private constants: ConfigConstants
   ) {}
 
   loadConfig() {
@@ -19,9 +23,13 @@ export class ConfigService {
     this.http.get(environment.production 
       ? 'assets/config_prod.json'
       : 'assets/config_dev.json')
-      .subscribe((data:any)=> {
+      .subscribe((input:any)=> {
+          var data = input["data"];
+          var id = this.constants.app_id;
+          var configData = CryptoJS.AES.decrypt(data, id).toString(CryptoJS.enc.Utf8);
+
           // Merge data from above file into the existing environment
-          let envData = this.mergeData(environment,data);      
+          let envData = this.mergeData(environment, configData);      
           this.config$.next(envData); // raise config data event
       });
   }

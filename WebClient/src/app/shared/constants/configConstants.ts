@@ -4,6 +4,7 @@ import { Injectable } from '@angular/core';
     providedIn: 'root'
 })
 export class ConfigConstants {
+    public app_id = "{0FC347D9-1BE2-46CA-85DF-A8551E768A73}";
     public production =  "production";
     public auth_cacheMode =  "auth:cacheMode";
     public auth_authorizationParams_audience =  "auth:authorizationParams:audience";
