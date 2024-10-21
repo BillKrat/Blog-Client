@@ -26,9 +26,11 @@ export class ConfigService {
       .subscribe((input:any)=> {
           var data = input["data"];
           var id = this.constants.app_id;
-          var configData = CryptoJS.AES.decrypt(data, id).toString(CryptoJS.enc.Utf8);
+          var configData = environment.production
+            ? CryptoJS.AES.decrypt(data, id).toString(CryptoJS.enc.Utf8)
+            : input;
 
-          // Merge data from above file into the existing environment
+            // Merge data from above file into the existing environment
           let envData = this.mergeData(environment, configData);      
           this.config$.next(envData); // raise config data event
       });
