@@ -1,6 +1,6 @@
 import { Component, inject, OnInit } from '@angular/core';
-import { ConfigService } from './services/config.service';
-import { ConfigConstants } from './shared/constants/configConstants';
+import { ConfigService } from './providers/config.service';
+import { ConstantService } from './sharedModule/providers/constant.service';
 
 @Component({
   selector: 'app-root',
@@ -12,12 +12,12 @@ export class AppComponent implements OnInit {
   title = 'WebClient';
 
   constructor(
-    private services:ConfigService,
-    private constants:ConfigConstants
+    private config:ConfigService,
+    private constants:ConstantService
   ){ }
 
   ngOnInit(){
-    this.services.config$.subscribe(config =>{
+    this.config.settings$.subscribe(config =>{
       this.apiUrl = `Production: ${config.get(this.constants.production)} |  
       ${config.get(this.constants.auth_authorizationParams_redirect_uri)};`
     });

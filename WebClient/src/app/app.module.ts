@@ -3,16 +3,12 @@ import { BrowserModule } from '@angular/platform-browser';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { ConfigService } from './services/config.service';
+import { ConfigService } from './providers/config.service';
 import { provideHttpClient } from '@angular/common/http';
-import { SharedModule } from './shared/shared.module';
+import { SharedModule } from './sharedModule/shared.module';
 
 export function initializeApp(configService: ConfigService) {
-  return () =>  
-    {
-      console.log("initializeApp");
-      configService.loadConfig()
-    }
+    return () => configService.loadConfig();
 }
 
 @NgModule({

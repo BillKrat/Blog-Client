@@ -3,7 +3,7 @@ import { Injectable } from '@angular/core';
 @Injectable({
     providedIn: 'root'
 })
-export class ConfigConstants {
+export class ConstantService {
     public app_id = "{0FC347D9-1BE2-46CA-85DF-A8551E768A73}";
     public production =  "production";
     public auth_cacheMode =  "auth:cacheMode";

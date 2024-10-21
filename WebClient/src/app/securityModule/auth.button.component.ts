@@ -1,6 +1,6 @@
 import { Component, Inject } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { securityService } from './security.service';
+import { securityService } from './providers/security.service';
 
 @Component({
   imports:[CommonModule],
