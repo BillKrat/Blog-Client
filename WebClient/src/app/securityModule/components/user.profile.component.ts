@@ -1,7 +1,6 @@
 import { CommonModule } from '@angular/common';
 import { Component } from '@angular/core';
 import { AuthService } from '@auth0/auth0-angular';
-import { Observable, Subject } from 'rxjs';
 
 @Component({
   imports:[CommonModule],

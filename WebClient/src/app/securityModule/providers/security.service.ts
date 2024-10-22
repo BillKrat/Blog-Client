@@ -2,10 +2,10 @@
 import { Injectable, OnDestroy } from '@angular/core';
 import { AuthService, GetTokenSilentlyOptions, LogoutOptions } from '@auth0/auth0-angular';
 import { Observable } from 'rxjs';
-import { environment } from '../environments/environment.dev';
+import { environment } from '../../../environments/environment';
 
 @Injectable({ providedIn: 'root' })
-export class securityService implements OnDestroy { 
+export class SecurityService implements OnDestroy { 
   public isAuthenticated$: Observable<boolean> | undefined;
   private authToken: string | undefined;
 

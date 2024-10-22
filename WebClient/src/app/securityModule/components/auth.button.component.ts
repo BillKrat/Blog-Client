@@ -1,6 +1,6 @@
 import { Component, Inject } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { securityService } from './providers/security.service';
+import { SecurityService } from '../providers/security.service';
 
 @Component({
   imports:[CommonModule],
@@ -19,5 +19,5 @@ import { securityService } from './providers/security.service';
   standalone: true
 })
 export class AuthButtonComponent {
-  constructor(public auth: securityService) {}
+  constructor(public auth: SecurityService) {}
 }

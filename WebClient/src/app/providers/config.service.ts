@@ -30,6 +30,11 @@ export class ConfigService {
 
           // Merge data from configData into the existing environment data
           let envData = this.jsonSvc.mergeData(environment, configData);      
+
+          environment.auth.domain = configData.domain;
+          environment.auth.clientId = configData.clientId;
+          environment.auth.authorizationParams.redirect_uri = configData.auth.authorizationParams.redirect_uri;
+
           this.settings$.next(envData); // raise config data event
       });
   }
