@@ -19,4 +19,8 @@ import { EncryptionService } from './providers/encryption.service';
     JsonService
   ]
 })
-export class SharedModule { }
+export class SharedModule { 
+  constructor(){
+    console.log("SharedModule");
+  }
+}

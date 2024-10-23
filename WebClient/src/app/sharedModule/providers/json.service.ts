@@ -4,7 +4,9 @@ import { Injectable } from "@angular/core";
   providedIn: 'root'
 })
 export class JsonService {
-
+  constructor(){
+    console.log("JsonService");
+  }
   /**
    * Flattens out Json using colons as delimiters
    * { 

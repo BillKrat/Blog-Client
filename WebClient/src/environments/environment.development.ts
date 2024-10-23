@@ -1,5 +1,5 @@
-
-import env from './config_dev.json';
+//import env from './config_prod.json';
+import env from '../../public/assets/config_dev.json';
 
 // Import content from auth_config_dev.json file
 const { cacheMode, authorizationParams: { redirect_uri, scope, audience }, 

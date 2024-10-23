@@ -6,7 +6,6 @@ import { AppComponent } from './app.component';
 import { ConfigService } from './providers/config.service';
 import { provideHttpClient } from '@angular/common/http';
 import { SharedModule } from './sharedModule/shared.module';
-import { AuthButtonComponent } from "./securityModule/components/auth.button.component";
 import { SecurityModule } from './securityModule/security.module';
 
 export function initializeApp(configService: ConfigService) {
@@ -22,7 +21,6 @@ export function initializeApp(configService: ConfigService) {
     AppRoutingModule,
     SecurityModule,
     SharedModule,
-    AuthButtonComponent
 ],
   providers: [
     provideHttpClient(),
@@ -35,4 +33,8 @@ export function initializeApp(configService: ConfigService) {
   ],
   bootstrap: [AppComponent]
 })
-export class AppModule { }
+export class AppModule {
+  constructor(){
+    console.log("AppModule");
+  }
+ }

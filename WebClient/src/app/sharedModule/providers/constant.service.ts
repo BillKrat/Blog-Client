@@ -17,4 +17,11 @@ export class ConstantService {
     public auth_apiUri =  "auth:apiUri";
     public auth_errorPath =  "auth:errorPath";
     public httpInterceptor_allowedList =  "httpInterceptor:allowedList";
+    constructor(){
+        console.log("ConstantService");
+    }
+}
+
+export function getAppId(){
+    return new ConstantService().app_id;
 }

@@ -1,6 +1,7 @@
 import { Component, inject, OnInit } from '@angular/core';
 import { ConfigService } from './providers/config.service';
 import { ConstantService } from './sharedModule/providers/constant.service';
+import { environment } from '../environments/environment';
 
 @Component({
   selector: 'app-root',
@@ -17,11 +18,12 @@ export class AppComponent implements OnInit {
   ){ }
 
   ngOnInit(){
-    this.configSvc.settings$.subscribe(config =>{
-      this.apiUrl = 
-      `Production: ${config.get(this.constantSvc.production)} |  
-        ${config.get(this.constantSvc.auth_authorizationParams_redirect_uri)}`;
+      let config = this.configSvc.envData;
 
-    });
+      this.apiUrl = 
+      `Production: ${environment.production} |  
+        ${environment.auth.authorizationParams.redirect_uri}`;
+
+       console.log('app.component:',config); 
   }
 }

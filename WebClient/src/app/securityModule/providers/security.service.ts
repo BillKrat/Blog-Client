@@ -11,6 +11,7 @@ export class SecurityService implements OnDestroy {
 
   constructor(public auth: AuthService) 
   {
+    console.log("SecurityService");
     // bubble auth isAuthenticated to our security isAuthenticated
     auth.isAuthenticated$.subscribe((isAuthenticated)=>{
       this.isAuthenticated$ = auth.isAuthenticated$

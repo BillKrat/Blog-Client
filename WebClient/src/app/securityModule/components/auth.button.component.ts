@@ -20,7 +20,9 @@ import { environment } from '../../../environments/environment';
   standalone: true
 })
 export class AuthButtonComponent {
-  constructor(public auth: SecurityService) {}
+  constructor(public auth: SecurityService) {
+    console.log("AuthButtonComponent");
+  }
   public returnToUrl:string = environment.auth.authorizationParams.redirect_uri
   
 }

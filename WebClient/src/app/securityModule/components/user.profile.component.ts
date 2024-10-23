@@ -21,6 +21,8 @@ export class UserProfileComponent {
     public authSvc: AuthService,
     public securitySvc: SecurityService ) 
   {
+    console.log("UserProfileComponent");
+    
     authSvc.user$.subscribe((value:any)=>{
         if(authSvc.isAuthenticated$ && value?.sub){
           this.id = `${value.sub}`;
