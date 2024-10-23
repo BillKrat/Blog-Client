@@ -1,13 +1,14 @@
-import { Component, Inject } from '@angular/core';
+import { Component } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { SecurityService } from '../providers/security.service';
+import { environment } from '../../../environments/environment';
 
 @Component({
   imports:[CommonModule],
   selector: 'app-auth-button',
   template: `
     <ng-container *ngIf="auth.isAuthenticated$ | async; else loggedOut">
-      <button (click)="auth.logout({ logoutParams: { returnTo: 'https://localhost:4200' } })">
+      <button (click)="auth.logout({ logoutParams: { returnTo: returnToUrl } })">
         Log out
       </button>
     </ng-container>
@@ -20,4 +21,6 @@ import { SecurityService } from '../providers/security.service';
 })
 export class AuthButtonComponent {
   constructor(public auth: SecurityService) {}
+  public returnToUrl:string = environment.auth.authorizationParams.redirect_uri
+  
 }

@@ -8,7 +8,6 @@ import { provideHttpClient } from '@angular/common/http';
 import { SharedModule } from './sharedModule/shared.module';
 import { AuthButtonComponent } from "./securityModule/components/auth.button.component";
 import { SecurityModule } from './securityModule/security.module';
-import { provideAuth0 } from '@auth0/auth0-angular';
 
 export function initializeApp(configService: ConfigService) {
     return () => configService.loadConfig();

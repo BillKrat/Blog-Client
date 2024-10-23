@@ -5,11 +5,9 @@ import { UserProfileComponent } from './components/user.profile.component';
 import { AuthButtonComponent } from './components/auth.button.component';
 import { provideAuth0 } from '@auth0/auth0-angular';
 
-/*
-     Prerequisites
+/*   Prerequisites
      =============
-     npm i @auth0/auth0-angular
-*/
+     npm i @auth0/auth0-angular    */
 
 @NgModule({
   declarations: [],
@@ -28,9 +26,15 @@ import { provideAuth0 } from '@auth0/auth0-angular';
       domain: 'dev-a0hjb1v0jos2opg2.us.auth0.com',
       clientId: 'vccpAHztTEWWkYWqiJ19SE02jtJUGrdT',
       authorizationParams: {
+        audience: "https://dev-a0hjb1v0jos2opg2.us.auth0.com/api/v2/",
         redirect_uri: "https://localhost:4200"
       }
     }),
   ]
 })
-export class SecurityModule { }
+
+export class SecurityModule { 
+  constructor(){
+    console.log('security module:',this);
+  }  
+}

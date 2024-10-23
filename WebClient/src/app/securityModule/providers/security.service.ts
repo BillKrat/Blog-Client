@@ -1,13 +1,13 @@
 // data.service.ts
 import { Injectable, OnDestroy } from '@angular/core';
 import { AuthService, GetTokenSilentlyOptions, LogoutOptions } from '@auth0/auth0-angular';
-import { Observable } from 'rxjs';
+import { Observable, Subject } from 'rxjs';
 import { environment } from '../../../environments/environment';
 
 @Injectable({ providedIn: 'root' })
 export class SecurityService implements OnDestroy { 
+  public bearerToken$: Subject<string> = new Subject<string>();
   public isAuthenticated$: Observable<boolean> | undefined;
-  private authToken: string | undefined;
 
   constructor(public auth: AuthService) 
   {
@@ -24,7 +24,7 @@ export class SecurityService implements OnDestroy {
             }
         };
         auth.getAccessTokenSilently(options).subscribe((value:string)=>{
-            this.authToken = value;
+            this.bearerToken$.next(value);
         })
       }
     });
@@ -32,10 +32,6 @@ export class SecurityService implements OnDestroy {
 
   ngOnDestroy(): void {
   }
-  getToken(){
-    return this.authToken ?? "not assigned";
-  }
-
   logout(options?: LogoutOptions): Observable<void>{
       return this.auth.logout(options);
   }
