@@ -19,8 +19,7 @@ export class UserProfileComponent {
 
   constructor(
     public authSvc: AuthService,
-    public securitySvc: SecurityService
-  ) 
+    public securitySvc: SecurityService ) 
   {
     authSvc.user$.subscribe((value:any)=>{
         if(authSvc.isAuthenticated$ && value?.sub){
@@ -28,9 +27,6 @@ export class UserProfileComponent {
           securitySvc.bearerToken$.next(this.id);
         }
     })
-  }
-  getId(): string | undefined{
-    return this.id;
   }
 }
 

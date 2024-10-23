@@ -1,7 +1,6 @@
 import { Component, inject, OnInit } from '@angular/core';
 import { ConfigService } from './providers/config.service';
 import { ConstantService } from './sharedModule/providers/constant.service';
-import { SecurityService } from './securityModule/providers/security.service';
 
 @Component({
   selector: 'app-root',

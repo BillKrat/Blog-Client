@@ -13,8 +13,6 @@ export class SecurityService implements OnDestroy {
   {
     // bubble auth isAuthenticated to our security isAuthenticated
     auth.isAuthenticated$.subscribe((isAuthenticated)=>{
-      console.log("AUTHENTICATED:", isAuthenticated);
-
       this.isAuthenticated$ = auth.isAuthenticated$
       if(isAuthenticated){
         var options: GetTokenSilentlyOptions = {
