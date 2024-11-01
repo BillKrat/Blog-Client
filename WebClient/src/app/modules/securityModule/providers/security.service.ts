@@ -2,7 +2,7 @@
 import { Injectable, OnDestroy } from '@angular/core';
 import { AuthService, GetTokenSilentlyOptions, LogoutOptions } from '@auth0/auth0-angular';
 import { Observable, Subject } from 'rxjs';
-import { environment } from '../../../environments/environment';
+import { environment } from '../../../../environments/environment';
 
 @Injectable({ providedIn: 'root' })
 export class SecurityService implements OnDestroy { 

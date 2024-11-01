@@ -1,6 +1,6 @@
 //import env from './config_prod.json'
 import env from '../../public/assets/config_prod.json';
-import {decrypt} from '../app/sharedModule/providers/encryption.service'
+import {decrypt} from '../app/modules/sharedModule/providers/encryption.service'
 
 // Import content from auth_config_dev.json file
 const { cacheMode, authorizationParams: { redirect_uri, scope, audience }, 

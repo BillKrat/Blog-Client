@@ -1,9 +1,9 @@
 import { environment } from '../../environments/environment';
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
-import { JsonService } from '../sharedModule/providers/json.service';
-import { EncryptionService } from '../sharedModule/providers/encryption.service';
-import { ConstantService } from '../sharedModule/providers/constant.service';
+import { JsonService } from '../modules/sharedModule/providers/json.service';
+import { EncryptionService } from '../modules/sharedModule/providers/encryption.service';
+import { ConstantService } from '../modules/sharedModule/providers/constant.service';
 
 @Injectable({
   providedIn: 'root'

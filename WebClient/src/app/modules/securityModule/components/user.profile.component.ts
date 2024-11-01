@@ -7,10 +7,10 @@ import { SecurityService } from '../providers/security.service';
   imports:[CommonModule],
   selector: 'app-user-profile',
   template: `
-    <ul *ngIf="authSvc.user$ | async as user">
+    <span *ngIf="authSvc.user$ | async as user">
       <b>Auth0 payload:</b><i>{{ id }}</i>
-    </ul>
-    `,
+    </span>
+  `,
   standalone: true
 })
 

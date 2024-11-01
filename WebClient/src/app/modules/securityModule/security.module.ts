@@ -4,7 +4,7 @@ import { SecurityService } from './providers/security.service';
 import { UserProfileComponent } from './components/user.profile.component';
 import { AuthButtonComponent } from './components/auth.button.component';
 import { AuthModule } from '@auth0/auth0-angular';
-import { environment } from '../../environments/environment';
+import { environment } from '../../../environments/environment';
 
 /*   Prerequisites
      =============
