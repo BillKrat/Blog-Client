@@ -1,189 +1,364 @@
-html {
-    font-size: 14px;
-}
-
-body {
-    font-family: var(--font-family);
-    font-weight: normal;
-    background: var(--surface-ground);
-    color: var(--text-color);
-    padding: 1rem;
-    -webkit-font-smoothing: antialiased;
-    -moz-osx-font-smoothing: grayscale;
-}
-
-.card {
-    background: var(--surface-card);
-    padding: 2rem;
-    border-radius: 10px;
-    margin-bottom: 1rem;
-}
-   
-:host {
-    --bright-blue: oklch(51.01% 0.274 263.83);
-    --electric-violet: oklch(53.18% 0.28 296.97);
-    --french-violet: oklch(47.66% 0.246 305.88);
-    --vivid-pink: oklch(69.02% 0.277 332.77);
-    --hot-red: oklch(61.42% 0.238 15.34);
-    --orange-red: oklch(63.32% 0.24 31.68);
-
-    --gray-900: oklch(19.37% 0.006 300.98);
-    --gray-700: oklch(36.98% 0.014 302.71);
-    --gray-400: oklch(70.9% 0.015 304.04);
-
-    --red-to-pink-to-purple-vertical-gradient: linear-gradient(
-      180deg,
-      var(--orange-red) 0%,
-      var(--vivid-pink) 50%,
-      var(--electric-violet) 100%
-    );
-
-    --red-to-pink-to-purple-horizontal-gradient: linear-gradient(
-      90deg,
-      var(--orange-red) 0%,
-      var(--vivid-pink) 50%,
-      var(--electric-violet) 100%
-    );
-
-    --pill-accent: var(--bright-blue);
-
-    font-family: "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
-      Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji",
-      "Segoe UI Symbol";
-    box-sizing: border-box;
-    -webkit-font-smoothing: antialiased;
-    -moz-osx-font-smoothing: grayscale;
+:root {
+    --border-color: #cacaca;
+    --background-color: #ffffff;
+  
+    --background-box-title: #f7f7f7;
   }
-
-  h1 {
-    font-size: 3.125rem;
-    color: var(--gray-900);
-    font-weight: 500;
-    line-height: 100%;
-    letter-spacing: -0.125rem;
-    margin: 0;
-    font-family: "Inter Tight", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
-      Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji",
-      "Segoe UI Symbol";
+  
+  html, body {
+    margin: 0px;
+    padding: 0px;
+    width: 100vw;
+    height: 100vh;
+    overflow: hidden;
+    font-family: 'Roboto', sans-serif;
   }
-
-  p {
-    margin: 0;
-    color: var(--gray-700);
+  
+  header {
+    height: 66px;
+    border-bottom: 1px solid var(--border-color);
+    padding-left: 20px;
   }
-
-  main {
-    width: 100%;
-    min-height: 100%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    padding: 1rem;
-    box-sizing: inherit;
-    position: relative;
+  header h2 {
+    margin: 0px;
+    line-height: 66px;
   }
-
-  .angular-logo {
-    max-width: 9.2rem;
+  header a {
+    color: black;
   }
-
-  .content {
-    display: flex;
-    justify-content: space-around;
-    width: 100%;
-    max-width: 700px;
-    margin-bottom: 3rem;
+  .them-edit-link {
+    position: absolute;
+    top: 10px;
+    right: 100px;
+    color: black;
+    font-size: 40px;
   }
-
-  .content h1 {
-    margin-top: 1.75rem;
-  }
-
-  .content p {
-    margin-top: 1.5rem;
-  }
-
-  .divider {
-    width: 1px;
-    background: var(--red-to-pink-to-purple-vertical-gradient);
-    margin-inline: 0.5rem;
-  }
-
-  .pill-group {
-    display: flex;
-    flex-direction: column;
-    align-items: start;
-    flex-wrap: wrap;
-    /*gap: 1.25rem;*/
-  }
-
-  .pill {
-    display: flex;
-    align-items: center;
-    --pill-accent: var(--bright-blue);
-    background: color-mix(in srgb, var(--pill-accent) 5%, transparent);
-    color: var(--pill-accent);
-    padding-inline: 0.75rem;
-    padding-block: 0.375rem;
-    border-radius: 2.75rem;
-    border: 0;
-    transition: background 0.3s ease;
-    font-family: var(--inter-font);
-    font-size: 0.875rem;
-    font-style: normal;
-    font-weight: 500;
-    line-height: 1.4rem;
-    letter-spacing: -0.00875rem;
+  .them-edit-link a {
     text-decoration: none;
+  }
+  
+  .github-link{
+    position: absolute;
+    top: 10px;
+    right: 20px;
+    color: black;
+  }
+  
+  .wrapper {
+    width: 100%;
+    height: calc(100vh - 67px);
+    display: flex;
+  }
+  
+  .col {
+    overflow: auto;
+    width: 300px;
+    height: 100%;
+    border-right: 1px solid var(--border-color);
+  }
+  
+  .drag-drawflow {
+    line-height: 50px;
+    border-bottom: 1px solid var(--border-color);
+    padding-left: 20px;
+    cursor: move;
+    user-select: none;
+  }
+  .menu {
+    position: absolute;
+    height: 40px;
+    display: block;
+    background: white;
+    width: 100%;
+  }
+  .menu ul {
+    padding: 0px;
+    margin: 0px;
+    line-height: 40px;
+  }
+  
+  .menu ul li {
+    display: inline-block;
+  margin-left: 10px;
+  border-right: 1px solid var(--border-color);
+  padding-right: 10px;
+  line-height: 40px;
+  cursor: pointer;
+  }
+  
+  .menu ul li.selected {
+    font-weight: bold;
+  }
+  
+  .btn-export {
+    float: right;
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    color: white;
+    font-weight: bold;
+    border: 1px solid #0e5ba3;
+    background: #4ea9ff;
+    padding: 5px 10px;
+    border-radius: 4px;
+    cursor: pointer;
+    z-index: 5;
+  }
+  
+  .btn-clear {
+    float: right;
+    position: absolute;
+    top: 10px;
+    right: 85px;
+    color: white;
+    font-weight: bold;
+    border: 1px solid #96015b;
+    background: #e3195a;
+    padding: 5px 10px;
+    border-radius: 4px;
+    cursor: pointer;
+    z-index: 5;
+  }
+  .swal-wide{
+      width:80% !important;
+  }
+  
+  .btn-lock {
+    float: right;
+    position: absolute;
+    bottom: 10px;
+    right: 140px;
+    display: flex;
+    font-size: 24px;
+    color: white;
+    padding: 5px 10px;
+    background: #555555;
+    border-radius: 4px;
+    border-right: 1px solid var(--border-color);
+    z-index: 5;
     cursor: pointer;
   }
-
-  .pill:hover {
-    background: color-mix(in srgb, var(--pill-accent) 15%, transparent);
-  }
-
-  .pill-group .pill:nth-child(6n + 1) {
-    --pill-accent: var(--bright-blue);
-  }
-  .pill-group .pill:nth-child(6n + 2) {
-    --pill-accent: var(--french-violet);
-  }
-  .pill-group .pill:nth-child(6n + 3),
-  .pill-group .pill:nth-child(6n + 4),
-  .pill-group .pill:nth-child(6n + 5) {
-    --pill-accent: var(--hot-red);
-  }
-
-  .pill-group svg {
-    margin-inline-start: 0.25rem;
-  }
-
-  .social-links {
+  
+  .bar-zoom {
+    float: right;
+    position: absolute;
+    bottom: 10px;
+    right: 10px;
     display: flex;
-    align-items: center;
-    gap: 0.73rem;
-    margin-top: 1.5rem;
+    font-size: 24px;
+    color: white;
+    padding: 5px 10px;
+    background: #555555;
+    border-radius: 4px;
+    border-right: 1px solid var(--border-color);
+    z-index: 5;
   }
-
-  .social-links path {
-    transition: fill 0.3s ease;
-    fill: var(--gray-400);
+  .bar-zoom svg {
+    cursor: pointer;
+    padding-left: 10px;
   }
-
-  .social-links a:hover svg path {
-    fill: var(--gray-900);
+  .bar-zoom svg:nth-child(1) {
+    padding-left: 0px;
   }
-
-  @media screen and (max-width: 650px) {
-    .content {
-      flex-direction: column;
-      width: max-content;
+  
+  #drawflow {
+    position: relative;
+    width: calc(100vw - 301px);
+    height: calc(100% - 50px);
+    top: 40px;
+    background: var(--background-color);
+    background-size: 25px 25px;
+    background-image:
+     linear-gradient(to right, #f1f1f1 1px, transparent 1px),
+     linear-gradient(to bottom, #f1f1f1 1px, transparent 1px);
+  }
+  
+  @media only screen and (max-width: 768px) {
+    .col {
+      width: 50px;
     }
-
-    .divider {
-      height: 1px;
-      width: 100%;
-      background: var(--red-to-pink-to-purple-horizontal-gradient);
-      margin-block: 1.5rem;
+    .col .drag-drawflow span {
+      display:none;
+    }
+    #drawflow {
+      width: calc(100vw - 51px);
+    }
+  }
+  
+  
+  
+  /* Editing Drawflow */
+  
+  .drawflow .drawflow-node {
+    background: var(--background-color);
+    border: 1px solid var(--border-color);
+    -webkit-box-shadow: 0 2px 15px 2px var(--border-color);
+    box-shadow: 0 2px 15px 2px var(--border-color);
+    padding: 0px;
+    width: 200px;
+  }
+  
+  .drawflow .drawflow-node.selected  {
+    background: white;
+    border: 1px solid #4ea9ff;
+    -webkit-box-shadow: 0 2px 20px 2px #4ea9ff;
+    box-shadow: 0 2px 20px 2px #4ea9ff;
+  }
+  
+  .drawflow .drawflow-node.selected .title-box {
+    color: #22598c;
+    /*border-bottom: 1px solid #4ea9ff;*/
+  }
+  
+  .drawflow .connection .main-path {
+    stroke: #4ea9ff;
+    stroke-width: 3px;
+  }
+  
+  .drawflow .drawflow-node .input, .drawflow .drawflow-node .output {
+    height: 15px;
+    width: 15px;
+    border: 2px solid var(--border-color);
+  }
+  
+  .drawflow .drawflow-node .input:hover, .drawflow .drawflow-node .output:hover {
+    background: #4ea9ff;
+  }
+  
+  .drawflow .drawflow-node .output {
+    right: 10px;
+  }
+  
+  .drawflow .drawflow-node .input {
+    left: -10px;
+    background: white;
+  }
+  
+  .drawflow > .drawflow-delete {
+    border: 2px solid #43b993;
+    background: white;
+    color: #43b993;
+    -webkit-box-shadow: 0 2px 20px 2px #43b993;
+    box-shadow: 0 2px 20px 2px #43b993;
+  }
+  
+  .drawflow-delete {
+    border: 2px solid #4ea9ff;
+    background: white;
+    color: #4ea9ff;
+    -webkit-box-shadow: 0 2px 20px 2px #4ea9ff;
+    box-shadow: 0 2px 20px 2px #4ea9ff;
+  }
+  
+  .drawflow-node .title-box {
+    height: 50px;
+    line-height: 50px;
+    background: var(--background-box-title);
+    border-bottom: 1px solid #e9e9e9;
+    border-radius: 4px 4px 0px 0px;
+    padding-left: 10px;
+  }
+  .drawflow .title-box svg {
+    position: initial;
+  }
+  .drawflow-node .box {
+    padding: 10px 20px 20px 20px;
+    font-size: 14px;
+    color: #555555;
+  
+  }
+  .drawflow-node .box p {
+    margin-top: 5px;
+    margin-bottom: 5px;
+  }
+  
+  .drawflow-node.welcome {
+    width: 250px;
+  }
+  
+  .drawflow-node.slack .title-box {
+    border-radius: 4px;
+  }
+  
+  .drawflow-node input, .drawflow-node select, .drawflow-node textarea {
+    border-radius: 4px;
+    border: 1px solid var(--border-color);
+    height: 30px;
+    line-height: 30px;
+    font-size: 16px;
+    width: 158px;
+    color: #555555;
+  }
+  
+  .drawflow-node textarea {
+    height: 100px;
+  }
+  
+  
+  .drawflow-node.personalized {
+    background: red;
+    height: 200px;
+    text-align: center;
+    color: white;
+  }
+  .drawflow-node.personalized .input {
+    background: yellow;
+  }
+  .drawflow-node.personalized .output {
+    background: green;
+  }
+  
+  .drawflow-node.personalized.selected {
+    background: blue;
+  }
+  
+  .drawflow .connection .point {
+    stroke: var(--border-color);
+    stroke-width: 2;
+    fill: white;
+    
+  }
+  
+  .drawflow .connection .point.selected, .drawflow .connection .point:hover {
+    fill: #4ea9ff;
+  }
+  
+  
+  /* Modal */
+  .modal {
+    display: none;
+    position: fixed;
+    z-index: 7;
+    left: 0;
+    top: 0;
+    width: 100vw;
+    height: 100vh;
+    overflow: auto;
+    background-color: rgb(0,0,0);
+    background-color: rgba(0,0,0,0.7);
+  
+  }
+  
+  .modal-content {
+    position: relative;
+    background-color: #fefefe;
+    margin: 15% auto; /* 15% from the top and centered */
+    padding: 20px;
+    border: 1px solid #888;
+    width: 400px; /* Could be more or less, depending on screen size */
+  }
+  
+  /* The Close Button */
+  .modal .close {
+    color: #aaa;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+    cursor:pointer;
+  }
+  
+  @media only screen and (max-width: 768px) {
+    .modal-content {
+      width: 80%;
     }
   }
