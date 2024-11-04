@@ -13,9 +13,9 @@ interface Column {
 }
 
 @Component({
+    standalone: true,
     selector: 'tree-nodes',
     templateUrl: './tree-nodes.component.html',
-    standalone: true,
     imports: [
         ButtonModule,
         SharedModule,
