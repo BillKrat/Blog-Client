@@ -15,7 +15,7 @@ export class DrawflowComponent implements OnInit, AfterViewInit, OnChanges {
   @Input()  nodes: any[] =[];
   @Input()  drawingData: string = "";
   @Input()  locked: boolean = false;
-  @Input()  showLock: boolean = false;
+  @Input()  showLock: boolean = true;
   @Input()  showNodes: boolean = false;
   @Input()  otherDetails: any;
 

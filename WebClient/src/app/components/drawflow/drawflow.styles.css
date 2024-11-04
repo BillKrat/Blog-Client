@@ -111,7 +111,7 @@
   #drawflow {
     position: relative;
     width: 100%;
-    height: 70vh;
+    height: 88vh;
     background: var(--dfBackgroundColor);
     background-size: var(--dfBackgroundSize) var(--dfBackgroundSize);
     background-image: var(--dfBackgroundImage);
