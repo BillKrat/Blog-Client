@@ -9,8 +9,7 @@ import { ConfigService } from './providers/config.service';
 import { provideHttpClient } from '@angular/common/http';
 import { SharedModule } from './modules/sharedModule/shared.module';
 import { SecurityModule } from './modules/securityModule/security.module';
-import { MindMapComponent } from "./components/tree-nodes/tree-nodes.component";
-import { NgDrawFlowDirective } from './directives/drawflow.directive';
+import { TreeNodeComponent } from "./components/tree-nodes/tree-nodes.component";
 
 // import { AccordionModule } from 'primeng/accordion';
 // import { AutoCompleteModule } from 'primeng/autocomplete';
@@ -124,14 +123,13 @@ export function initializeApp(configService: ConfigService) {
 @NgModule({
   declarations: [
     AppComponent,
-    NgDrawFlowDirective
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     SecurityModule,
     SharedModule,
-    MindMapComponent,
+    TreeNodeComponent,
     FormsModule,
 
     // AvatarModule,

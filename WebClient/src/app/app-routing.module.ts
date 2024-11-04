@@ -1,9 +1,9 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
-import { MindMapComponent } from './components/tree-nodes/tree-nodes.component';
+import { TreeNodeComponent } from './components/tree-nodes/tree-nodes.component';
 
 const routes: Routes = [{
-  path: 'treenodes', component: MindMapComponent
+  path: 'treenodes', component: TreeNodeComponent
 }];
 
 @NgModule({

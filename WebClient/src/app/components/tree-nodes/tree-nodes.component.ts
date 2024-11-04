@@ -25,7 +25,7 @@ interface Column {
     ],
     providers: [NodeService]
 })
-export class MindMapComponent implements OnInit {
+export class TreeNodeComponent implements OnInit {
     files!: TreeNode[];
     cols!: Column[];
     constructor(private nodeService: NodeService) {}
