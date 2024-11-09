@@ -1,16 +1,15 @@
 <table border="0px" width="100%">
   <tr>
-    <td width="40%">{{apiUrl}}</td>
-    <td width="49%"><app-user-profile></app-user-profile></td>
-    <td width="10px"><app-auth-button></app-auth-button></td>
+    <td width="70%"><app-user-profile></app-user-profile></td>
+    <td width="30px"><app-auth-button></app-auth-button></td>
   </tr>
 
 </table>
 
 @for (item of [
   { title: 'home', link: '#home' },
-  { title: 'Drawflow demo', link: '#draw' },
-  { title: 'Treenode demo', link: '#tree' },
+  { title: 'Drawflow', link: '#draw' },
+  { title: 'Treenode', link: '#tree' },
 ]; track item.title) {
   <a class="pill" [href]="item.link"><span>{{ item.title }}</span> </a>&nbsp;
 }
