@@ -16,6 +16,7 @@
           </div> -->
         </ng-container>
       </div>
+      <div class="btn-clear" (click)="onClear()">Clear</div>
       <div class="col-right" [ngStyle]="{ width: showNodes ? '80%' : '100%' }">
         <div
           id="drawflow"
@@ -25,15 +26,14 @@
           (dragend)="onDrawflowEvent($event)"
           (drop)="onDrawflowEvent($event)"
         ></div>
-        <div class="btn-clear" (click)="onClear()">Clear</div>
         <div *ngIf="showLock" class="btn-lock" [ngClass]="locked ? 'locked' : ''">
-          <i (click)="changeMode()" class="fas fa-lock-open" [ngStyle]="{ display: locked ? 'none' : 'block' }"></i>
-          <i (click)="changeMode()" class="fas fa-lock" [ngStyle]="{ display: locked ? 'block' : 'none' }"></i>
+          <i (click)="changeMode()" class="pi pi-lock-open" [ngStyle]="{ display: locked ? 'none' : 'block' }"></i>
+          <i (click)="changeMode()" class="pi pi-lock" [ngStyle]="{ display: locked ? 'block' : 'none' }"></i>
         </div>
         <div class="bar-zoom">
-          <i (click)="onZoomOut()" class="fas fa-search-minus"></i>
-          <i (click)="onZoomReset()" class="fas fa-search"></i>
-          <i (click)="onZoomIn()" class="fas fa-search-plus"></i>
+          <i (click)="onZoomOut()" class="pi pi-minus-circle"></i>
+          <i (click)="onZoomReset()" class="pi pi-circle-off"></i>
+          <i (click)="onZoomIn()" class="pi pi-plus-circle"></i>
         </div>
       </div>
     </div>

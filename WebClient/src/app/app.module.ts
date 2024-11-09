@@ -18,6 +18,7 @@ import { DrawflowComponent } from './components/drawflow/drawflow.component';
 import { TreeModule } from 'primeng/tree';
 import { TreeTableModule } from 'primeng/treetable';
 import { HomePageComponent } from './components/home-page/home-page.component';
+import { HashLocationStrategy, LocationStrategy } from '@angular/common';
 
 export function initializeApp(configService: ConfigService) {
     return () => configService.loadConfig();
@@ -39,9 +40,10 @@ export function initializeApp(configService: ConfigService) {
     TreeTableModule,
     // App components
     TreeNodeComponent,
-    DrawflowComponent
+    DrawflowComponent,
   ],
   providers: [
+    {provide: LocationStrategy, useClass:HashLocationStrategy},
     provideHttpClient(),
     {
       provide:APP_INITIALIZER,

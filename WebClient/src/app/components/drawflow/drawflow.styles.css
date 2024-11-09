@@ -164,10 +164,10 @@
       var(--dfNodeSelectedBoxShadowColor);
   }
   
-  /* .drawflow .drawflow-node.selected .title-box {
+  .drawflow .drawflow-node.selected .title-box {
      color: #22598c;
      border-bottom: 1px solid #4ea9ff;
-  } */
+  }
   
   .drawflow .drawflow-node .input {
     left: var(--dfInputLeft);
@@ -204,8 +204,15 @@
   }
   
   .drawflow .connection .main-path {
+    fill:none;
+    stroke: #4ea9ff;
+    stroke-width: 3px;
+  }
+
+  .drawflow .connection .main-path {
     stroke-width: var(--dfLineWidth);
     stroke: var(--dfLineColor);
+
   }
   
   .drawflow .connection .main-path:hover {

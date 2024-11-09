@@ -8,9 +8,9 @@
 </table>
 
 @for (item of [
-  { title: 'home', link: 'home' },
-  { title: 'Drawflow demo', link: 'draw' },
-  { title: 'Treenode demo', link: 'tree' },
+  { title: 'home', link: '#home' },
+  { title: 'Drawflow demo', link: '#draw' },
+  { title: 'Treenode demo', link: '#tree' },
 ]; track item.title) {
   <a class="pill" [href]="item.link"><span>{{ item.title }}</span> </a>&nbsp;
 }
